@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://c4bisqapodcqo" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cynux8v6s516r" path="res://paddle_1.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bj01saf7ajq4n" path="res://paddle_2.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://b5lmsolxfhbwx" path="res://ball.gd" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02unb"]
+size = Vector2(800, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(800, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bnha"]
 size = Vector2(10, 51)
@@ -22,9 +29,33 @@ offset_bottom = 500.0
 color = Color(0, 0, 0, 1)
 
 [node name="Line2D" type="Line2D" parent="Background" unique_id=1156267007]
-position = Vector2(400, 0)
+position = Vector2(403, 0)
 points = PackedVector2Array(-3, 4, -3, 497)
 width = 1.0
+
+[node name="Wall1" type="Area2D" parent="." unique_id=1766421948]
+metadata/_edit_group_ = true
+
+[node name="Wall1Collision" type="CollisionShape2D" parent="Wall1" unique_id=1460239441]
+position = Vector2(400.5, 4.5)
+shape = SubResource("RectangleShape2D_02unb")
+
+[node name="ColorRect" type="ColorRect" parent="Wall1" unique_id=57878777]
+offset_right = 800.0
+offset_bottom = 8.0
+
+[node name="Wall2" type="Area2D" parent="." unique_id=1430918791]
+position = Vector2(400, 497)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Wall2" unique_id=153713806]
+offset_left = -399.0
+offset_top = -2.0
+offset_right = 401.0
+offset_bottom = 3.0
+
+[node name="Wall2Collision" type="CollisionShape2D" parent="Wall2" unique_id=2466337]
+shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Paddle1" type="CharacterBody2D" parent="." unique_id=377049261]
 position = Vector2(50, 250)
@@ -58,6 +89,7 @@ shape = SubResource("RectangleShape2D_hrnxj")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=1846022898]
 position = Vector2(421, 251)
+script = ExtResource("4_1bvp3")
 metadata/_edit_group_ = true
 
 [node name="BallColor" type="ColorRect" parent="Ball" unique_id=61451181]
