@@ -1,15 +1,19 @@
 extends CharacterBody2D
 
 @export var speed = 600
+var screen_size: Vector2
 
 func get_input():
 	var input_direction = Input.get_axis("up1", "down1")
 	velocity.y = input_direction * speed
 
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	position.y = clamp(position.y, 0, screen_size.y)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
