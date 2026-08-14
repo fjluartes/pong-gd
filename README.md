@@ -4,7 +4,6 @@ Pong clone in Godot
 
 ## TODO
 
-- [ ] Add ball movement
 - [ ] Add wall bounce
 - [ ] Add player scoring
 - [ ] Add score display
@@ -14,5 +13,6 @@ Pong clone in Godot
 
 ## DONE
 
+- [x] Add ball movement
 - [x] Add paddle movement 
 - [x] Adds paddle1, paddle2, ball
