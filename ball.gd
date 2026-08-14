@@ -13,4 +13,4 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(motion)
 	
 	if collision:
-		direction = direction.bounce(collision.get_normal())
+		direction = direction.bounce(collision.get_normal()).normalized()

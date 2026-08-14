@@ -5,8 +5,12 @@
 [ext_resource type="Script" uid="uid://bj01saf7ajq4n" path="res://paddle_2.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://b5lmsolxfhbwx" path="res://ball.gd" id="4_1bvp3"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pt2u5"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02unb"]
 size = Vector2(800, 5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hq06k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(800, 5)
@@ -33,7 +37,8 @@ position = Vector2(403, 0)
 points = PackedVector2Array(-3, 4, -3, 497)
 width = 1.0
 
-[node name="Wall1" type="Area2D" parent="." unique_id=1766421948]
+[node name="Wall1" type="StaticBody2D" parent="." unique_id=414868005]
+physics_material_override = SubResource("PhysicsMaterial_pt2u5")
 metadata/_edit_group_ = true
 
 [node name="Wall1Collision" type="CollisionShape2D" parent="Wall1" unique_id=1460239441]
@@ -44,8 +49,9 @@ shape = SubResource("RectangleShape2D_02unb")
 offset_right = 800.0
 offset_bottom = 8.0
 
-[node name="Wall2" type="Area2D" parent="." unique_id=1430918791]
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1703329328]
 position = Vector2(400, 497)
+physics_material_override = SubResource("PhysicsMaterial_hq06k")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Wall2" unique_id=153713806]
@@ -57,7 +63,7 @@ offset_bottom = 3.0
 [node name="Wall2Collision" type="CollisionShape2D" parent="Wall2" unique_id=2466337]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="Paddle1" type="CharacterBody2D" parent="." unique_id=377049261]
+[node name="Paddle1" type="CharacterBody2D" parent="." unique_id=1034917541]
 position = Vector2(50, 250)
 script = ExtResource("2_0xm2m")
 metadata/_edit_group_ = true
