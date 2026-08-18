@@ -8,7 +8,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pt2u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02unb"]
-size = Vector2(800, 5)
+size = Vector2(800, 4)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hq06k"]
 
@@ -38,19 +38,22 @@ points = PackedVector2Array(-3, 4, -3, 497)
 width = 1.0
 
 [node name="Wall1" type="StaticBody2D" parent="." unique_id=414868005]
+position = Vector2(400, 4)
 physics_material_override = SubResource("PhysicsMaterial_pt2u5")
 metadata/_edit_group_ = true
 
 [node name="Wall1Collision" type="CollisionShape2D" parent="Wall1" unique_id=1460239441]
-position = Vector2(400.5, 4.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_02unb")
 
 [node name="ColorRect" type="ColorRect" parent="Wall1" unique_id=57878777]
-offset_right = 800.0
-offset_bottom = 8.0
+offset_left = -400.0
+offset_top = -4.0
+offset_right = 400.0
+offset_bottom = 1.0
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=1703329328]
-position = Vector2(400, 497)
+position = Vector2(400, 500)
 physics_material_override = SubResource("PhysicsMaterial_hq06k")
 metadata/_edit_group_ = true
 
